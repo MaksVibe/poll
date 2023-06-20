@@ -15,6 +15,7 @@ function App() {
         if (departs.some(dep => `/${dep}` === location.pathname)) {
             dispatch(fetchTechs(location.pathname.slice(1)));
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location]);
 
     return (
