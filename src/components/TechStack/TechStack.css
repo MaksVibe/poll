@@ -1,0 +1,140 @@
+.wrapper,
+.technology {
+    display: flex;
+    gap: 20px;
+}
+
+
+.input {
+    height: fit-content;
+    padding: 10px 20px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background-color: white;
+
+    transition: all 350ms linear;
+}
+
+.invalid {
+    border-color: tomato;
+}
+
+.technologies {
+    width: 100%;
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.technology {
+    padding-bottom: 2px;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+
+.inv-text {
+    position: relative;
+    z-index: -1;
+    color: tomato;
+    font-size: 14px;
+}
+
+.inv-text > p {
+    position: absolute;
+}
+
+.addBtn {
+    border-radius: 50%;
+    border: none;
+    color: white;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+
+.fade-in {
+    visibility: visible;
+    -webkit-animation: slide-bottom 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
+    animation: slide-bottom 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+        opacity: 1;
+    }
+}
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    visibility: hidden;
+    -webkit-animation: slide-out-top 350ms
+        cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+    animation: slide-out-top 350ms cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+}
+
+@-webkit-keyframes slide-out-top {
+    0% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        opacity: 0;
+    }
+}
+@keyframes slide-out-top {
+    0% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateY(-24px);
+        transform: translateY(-24px);
+        opacity: 0;
+    }
+}
+
+.separator {
+    width: 2px;
+    background-color: lightgray;
+    height: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .input {
+        max-width: 174px;
+    }
+    .technologies {
+        max-width: 80%;
+        margin-bottom: 100px !important; 
+    }
+    .separator {
+        display: none;
+    }
+}
